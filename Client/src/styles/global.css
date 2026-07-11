@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utilities */
+@layer utilities {
+  .fade-up {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-wider text-brand-red;
+  }
+}
+
+/* Base styles */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-white font-body antialiased overflow-x-hidden;
+  }
+
+  .container {
+    @apply w-[90%] max-w-[1400px] mx-auto;
+  }
+
+  .heading-display {
+    @apply font-display uppercase tracking-tight;
+  }
+}
+
+/* Ant Design overrides */
+@layer components {
+  .ant-input,
+  .ant-input-affix-wrapper,
+  .ant-select-selector,
+  .ant-input-number,
+  .ant-picker {
+    background: #111 !important;
+    border: 1px solid #2b2b2b !important;
+    color: white !important;
+  }
+
+  .ant-input::placeholder,
+  textarea::placeholder {
+    color: #888 !important;
+  }
+
+  .ant-checkbox-wrapper {
+    color: white;
+  }
+
+  .ant-card {
+    background: #18181b !important;
+    border: 1px solid #2b2b2b !important;
+  }
+
+  .ant-collapse {
+    background: transparent !important;
+  }
+
+  .ant-collapse-item {
+    border-color: #2b2b2b !important;
+  }
+
+  .ant-collapse-header {
+    color: white !important;
+  }
+
+  .ant-collapse-content {
+    background: #111 !important;
+    color: white;
+  }
+
+  .ant-form-item-label label {
+    color: white !important;
+  }
+}
