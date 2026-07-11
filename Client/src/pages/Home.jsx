@@ -1,18 +1,21 @@
-import Navbar from "../components/Navbar.jsx";
-import Hero from "../sections/Hero/Hero.jsx";
-import About from "../sections/About/About.jsx";
-import Footer from "../components/Footer";
+import Hero from "../components/Hero.jsx";
+import About from "../components/About.jsx";
+import Features from "../components/Features.jsx";
+import Perks from "../components/Perks.jsx";
+import Eligibility from "../components/Eligibility.jsx";
+import Timeline from "../components/Timeline.jsx";
+import FAQ from "../components/FAQ.jsx";
 
 function Home() {
   return (
     <>
-      <Navbar />
-
       <Hero />
-
       <About />
-
-      <Footer />
+      <Features />
+      <Perks />
+      <Eligibility />
+      <Timeline />
+      <FAQ />
     </>
   );
 }

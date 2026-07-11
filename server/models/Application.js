@@ -2,38 +2,26 @@ import mongoose from "mongoose";
 
 const ApplicationSchema = new mongoose.Schema(
   {
-    firstName: String,
-    lastName: String,
-    email: String,
-    phone: String,
-    country: String,
-    city: String,
-
-    creatorName: String,
-
-    niche: String,
-
-    platforms: [String],
-
-    followers: String,
-
-    averageViews: String,
-
-    profileLink: String,
-
-    participation: [String],
-
-    about: String,
-
-    previousExperience: String,
-
-    source: String,
-
-    agreeTerms: Boolean,
-
-    marketingConsent: Boolean,
-
-    updatesConsent: Boolean
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    email: { type: String, required: true },
+    phone: { type: String },
+    country: { type: String, required: true },
+    city: { type: String },
+    handle: { type: String, required: true },
+    niche: { type: String, required: true },
+    platforms: { type: [String], required: true },
+    followers: { type: String, required: true },
+    avgViews: { type: String },
+    profileLink: { type: String, required: true },
+    interests: { type: [String] },
+    about: { type: String, required: true },
+    experience: { type: String },
+    heardFrom: { type: String },
+    agreeTerms: { type: Boolean, required: true },
+    agreePhotos: { type: Boolean, default: false },
+    agreeUpdates: { type: Boolean, default: false },
+    createdAt: { type: Date, default: Date.now }
   },
   {
     timestamps: true

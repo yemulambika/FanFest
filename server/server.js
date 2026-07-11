@@ -1,11 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import morgan from "morgan";
 
 import connectDB from "./config/db.js";
-
-import applicationRoutes from "./routes/applicationRoutes.js";
+import applicationRoutes from "./routes/applications.js";
 
 dotenv.config();
 
@@ -13,16 +11,20 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+// CORS configuration
+app.use(cors({
+  origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+  credentials: true
+}));
 
 app.use(express.json());
 
-app.use(morgan("dev"));
-
-app.get("/", (req, res) => {
-  res.send("FanFest API Running...");
+// Health check endpoint
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok" });
 });
 
+// Routes
 app.use("/api/applications", applicationRoutes);
 
 const PORT = process.env.PORT || 5000;

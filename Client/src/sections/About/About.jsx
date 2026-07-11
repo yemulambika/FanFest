@@ -37,26 +37,20 @@ const features = [
 
 function About() {
   return (
-    <section className="about-section">
-
-      <div className="container">
-
+    <section id="about" className="about-section border-t border-panelBorder">
+      <div className="container py-20">
         <Row gutter={[60, 60]} align="middle">
-
           <Col xs={24} lg={10}>
-
             <motion.div
               initial={{ x: -80, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
-
-              <p className="about-tag">
-                ABOUT FANFEST
+              <p className="about-tag eyebrow">
+                WHAT IS FANFEST 2026
               </p>
-
-              <h2 className="about-title">
+              <h2 className="about-title heading-display text-4xl sm:text-5xl lg:text-6xl">
                 WHERE
                 <br />
                 CREATORS
@@ -65,25 +59,18 @@ function About() {
                 <br />
                 THEIR FANS
               </h2>
-
-              <p className="about-description">
+              <p className="about-description text-muted mt-4">
                 FanFest 2026 is India's biggest creator festival bringing
                 together content creators, influencers, brands, gamers,
                 artists and thousands of passionate fans under one roof.
               </p>
-
             </motion.div>
-
           </Col>
 
           <Col xs={24} lg={14}>
-
             <Row gutter={[24, 24]}>
-
               {features.map((item, index) => (
-
                 <Col xs={24} md={12} key={index}>
-
                   <motion.div
                     initial={{ y: 60, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -93,33 +80,20 @@ function About() {
                     }}
                     viewport={{ once: true }}
                   >
-
                     <Card className="feature-card">
-
                       <div className="feature-icon">
                         {item.icon}
                       </div>
-
                       <h3>{item.title}</h3>
-
                       <p>{item.description}</p>
-
                     </Card>
-
                   </motion.div>
-
                 </Col>
-
               ))}
-
             </Row>
-
           </Col>
-
         </Row>
-
       </div>
-
     </section>
   );
 }
